@@ -7,6 +7,8 @@ const baseURL = "https://platzi-avo.vercel.app";
 const urlApi = "https://platzi-avo.vercel.app/api/avo";
 const myAppNode = document.querySelector("#app");
 
+// Int API
+
 async function fetchData() {
     const response = await fetch(urlApi);
     const dataRes = await response.json();
@@ -17,7 +19,7 @@ async function fetchData() {
             image.src = `${baseURL}${item.image}`
             const title = document.createElement("h2");
             title.textContent = item.name;
-            title.style.fontSize = "2rem"; 
+            title.className = "text-2xl text-red-600"
             const price = document.createElement("div");
             price.textContent = item.price;
             const container = document.createElement("div");
