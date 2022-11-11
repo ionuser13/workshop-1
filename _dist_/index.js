@@ -3,21 +3,33 @@
  * When you're ready to start on your site, clear the file. Happy hacking!
  **/
 
-const urlAvo = "https://platzi-avo.vercel.app/api/avo";
+const baseURL = "https://platzi-avo.vercel.app";
+const urlApi = "https://platzi-avo.vercel.app/api/avo";
+const myAppNode = document.querySelector("#app");
 
 async function fetchData() {
-    const response = await fetch(urlAvo);
-    const data = await response.json();
+    const response = await fetch(urlApi);
+    const dataRes = await response.json();
     let items = [];
-    data.data.forEach((item) => {
-        const image = document.createElement("img");
-        const title = document.createElement("h2");
-        const price = document.createElement("div");
-        const container = document.createElement("div");
-        container.append(image, title, price);
-        items.push(container);
-    })
-    document.body.append(...items)
-    console.log(data)
+    try {
+        dataRes.data.forEach((item) => {
+            const image = document.createElement("img");
+            image.src = `${baseURL}${item.image}`
+            const title = document.createElement("h2");
+            title.textContent = item.name;
+            title.style.fontSize = "2rem"; 
+            const price = document.createElement("div");
+            price.textContent = item.price;
+            const container = document.createElement("div");
+            container.append(image, title, price);
+            items.push(container);
+        })
+        myAppNode.append(...items)
+        console.log(dataRes)
+    }
+    catch (error) {
+        console.error(error);
+        fetchData();
+    }
 }
 fetchData()
