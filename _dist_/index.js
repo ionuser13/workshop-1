@@ -3,6 +3,13 @@ const urlApi = "https://platzi-avo.vercel.app/api/avo";
 const myAppNode = document.querySelector("#app");
 myAppNode.className = "grid grid-cols-4 gap-8 max-w-7xl px-4 py-8 mx-auto min-w-fit rounded-2xl";
 
+// Event delagation - example
+// myAppNode.addEventListener("click", (e) => {
+//     if(e.target.nodeName === "H2"){
+//         window.alert("hola")    
+//     }
+// })
+
 // Intl API 1.- dates formats 2.- currency formats
 
 const formatPrice = (price) => {
