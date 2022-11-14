@@ -5,6 +5,6 @@ module.exports = {
     src: '/_dist_',
   },
   buildOptions: {
-    baseUrl: '"https://ionuser13.github.io/workshop-1-fetch"',
+    baseUrl: '"https://ionuser13.github.io/workshop-1"',
   },
 }
