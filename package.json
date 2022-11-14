@@ -5,7 +5,8 @@
     "format": "prettier --write \"src/**/*.js\"",
     "lint": "prettier --check \"src/**/*.js\"",
     "pre-commit": "pretty-quick --staged",
-    "install:husky": "husky install"
+    "install:husky": "husky install",
+    "homepage": "https://ionuser13/github.io/workshop-1"
   },
   "devDependencies": {
     "husky": "7",
